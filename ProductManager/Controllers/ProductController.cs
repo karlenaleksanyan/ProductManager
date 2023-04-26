@@ -2,7 +2,6 @@
 using ProductManager.Abstraction;
 using ProductManager.Models;
 using System.Web;
-using Response = ProductManager.Models.Response;
 
 namespace ProductManager.Controllers
 {

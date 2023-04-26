@@ -1,4 +1,5 @@
 using ProductManager.BusinessLogic.ServiceCollections;
+using ProductManager.DBMap;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +30,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseMyMiddleware();
+
 
 app.UseAuthorization();
 
