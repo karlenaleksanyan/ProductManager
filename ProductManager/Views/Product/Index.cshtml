@@ -1,0 +1,64 @@
+﻿@model ProductManager.Models.ProductModels
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="wrapper">
+    <a type="text/asa" class="logo" asp-area="" asp-controller="Product" asp-action="Index">Shop</a>
+
+
+    @using (Html.BeginForm("Search", "Product", FormMethod.Get))
+    {
+        <div class="searchBox">
+            <label for="query">Search by BarCode or PLU:</label>
+            <input type="number" name="query" />
+            <button type="submit">Search</button>
+        </div>
+    }
+    <div class="count">Count @Model.Count</div>
+
+    <div class="crateWrapper">
+        @using (Html.BeginForm("GetBasketProducts", "Product", FormMethod.Get))
+        {
+            <button type="submit">Basket</button>
+        }
+        <a asp-action="Create">Create New</a>
+    </div>
+</div>
+
+<div class="products" id="products_list">
+
+    @await Html.PartialAsync("_Product", Model.ProductModelList);
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    var pageNumber = 1;
+
+    $(window).scroll(function () {
+        if ('@ViewBag.ActionName' == "Index") {
+            var a = $(window).scrollTop() + $(window).height();
+            var b = $(document).height();
+            if ($(window).scrollTop() + $(window).height() + 1 > $(document).height()) {
+                pageNumber++;
+                $.ajax({
+                    url: '/Product/GetPage?pageNumber=' + pageNumber,
+                    type: 'GET',
+                    success: function (data) {
+
+                        $('#products_list').append(data);
+                    }
+                });
+            }
+        }
+    });
+</script>
+
+

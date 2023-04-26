@@ -1,0 +1,46 @@
+﻿@model List<ProductManager.Models.ProductModel>
+
+@foreach (var item in Model)
+{
+    <div class="card">
+        <p>
+            @Html.DisplayNameFor(model => @item.Name) -- @Html.DisplayFor(modelItem => @item.Name)
+        </p>
+        <p>
+            @Html.DisplayNameFor(model => @item.Price) -- @Html.DisplayFor(modelItem => @item.Price)
+        </p>
+        <p>
+            @Html.DisplayNameFor(model => @item.Barcode) -- @Html.DisplayFor(modelItem => @item.Barcode)
+        </p>
+        <p>
+            @Html.DisplayNameFor(model => @item.PLU) -- @Html.DisplayFor(modelItem => @item.PLU)
+        </p>
+        <p>
+            @Html.DisplayNameFor(model => @item.Image) -- @Html.DisplayFor(modelItem => @item.Image)
+        </p>
+
+        @if ("GetBasketProducts".Equals(ViewContext.RouteData.Values["Action"].ToString()) ||
+                "AddOrDeleteProductFromBasket".Equals(ViewContext.RouteData.Values["Action"].ToString()))
+        {
+            <a asp-action="AddOrDeleteProductFromBasket" asp-route-id="@item.Id">Delete From Basket</a>
+        }
+        else
+        {
+            if (@item.HasBasket)
+            {
+                <button class="btn grey" disabled>Add to Basket</button>
+
+            }
+            else
+            {
+                <button class="btn" onclick="myFunction(this, '@item.HasBasket', '@Url.Action("AddOrDeleteProductFromBasket")?id=@item.Id')">Add to Basket</button>
+            }
+
+
+            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        }
+        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+    </div>
+
+}

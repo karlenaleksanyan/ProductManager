@@ -1,0 +1,110 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.wrapper {
+    display: flex;
+    background: linear-gradient(180deg, #20A633 0%, #0C7F33 100%);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 30px;
+}
+
+.crateWrapper {
+    display: flex;
+    gap: 10px;
+    color: #fff;
+}
+
+    .crateWrapper a, button {
+        padding: 16px;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .crateWrapper button {
+        border: none;
+        background-color: transparent;
+    }
+
+    .crateWrapper a:hover, button:hover {
+        background-color: #ecf2f4;
+        color: black;
+    }
+
+.count {
+    color: white
+}
+
+.searchBox button {
+    display: none;
+}
+
+.searchBox {
+    color: yellow;
+}
+
+footer {
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    margin: 0 auto;
+    border: 0;
+    bottom: 0;
+}
+
+.card {
+    width: 300px;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.products {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border: none;
+    background-color: lightblue;
+    border: 1px solid black;
+}
+
+    .btn:hover {
+        background-color: white;
+        color: black;
+    }
+
+.grey {
+    background-color: grey;
+}

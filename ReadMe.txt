@@ -1,0 +1,1 @@
+You need to wait about 25 minutes to Initial the data.(Add 50.000 item)
