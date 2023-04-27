@@ -31,9 +31,6 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseMyMiddleware();
-
-
 app.UseAuthorization();
 
 app.MapControllerRoute(

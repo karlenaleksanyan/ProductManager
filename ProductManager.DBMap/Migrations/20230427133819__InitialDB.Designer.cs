@@ -12,8 +12,8 @@ using ProductManager.DBMap;
 namespace ProductManager.DBMap.Migrations
 {
     [DbContext(typeof(ProductManagerDbContext))]
-    [Migration("20230423185109__InitialDb3")]
-    partial class _InitialDb3
+    [Migration("20230427133819__InitialDB")]
+    partial class _InitialDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -12,7 +12,7 @@ namespace ProductManager.BusinessLogic.ServiceCollections
         public static void ConfigureServices(this IServiceCollection services, IConfiguration Configuration)
         {
             services.AddScoped<IProductService, ProductService>();
-            //services.AddHostedService<DbInitializer>();
+            services.AddHostedService<DbInitializer>();
 
             services.ConfigureRepositories(Configuration);
         }
